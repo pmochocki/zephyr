@@ -1148,6 +1148,8 @@ static int le_ext_adv_param_set(struct bt_le_ext_adv *adv,
 	if (param->options & BT_LE_ADV_OPT_EXT_ADV) {
 		if (param->options & BT_LE_ADV_OPT_NO_2M) {
 			cp->sec_adv_phy = BT_HCI_LE_PHY_1M;
+		} else if (param->options & BT_LE_ADV_OPT_AUX_CODED) {
+			cp->sec_adv_phy = BT_HCI_LE_PHY_CODED;
 		} else {
 			cp->sec_adv_phy = BT_HCI_LE_PHY_2M;
 		}
