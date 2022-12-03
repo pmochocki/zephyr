@@ -591,7 +591,7 @@ enum {
 	 * @brief Enable use of LE Coded PHY on the secondary advertising
 	 * channel.
 	 *
-	 * The advertiser will send primary advertising on LE 1M PHY, and
+	 * The advertiser will send primary advertising on LE 1M PHY and
 	 * secondary advertising on LE coded PHY.
 	 * Connections will be established on LE Coded PHY if the scanner
 	 * support is avaible and the LE 1M PHY is out of range.
