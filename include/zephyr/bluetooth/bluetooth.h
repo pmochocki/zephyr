@@ -532,6 +532,8 @@ enum {
 	 *
 	 * @note Cannot be set if BT_LE_ADV_OPT_CODED is set.
 	 *
+	 * @note Cannot be set if BT_LE_ADV_OPT_AUX_CODED is set.
+	 *
 	 * @note Requires @ref BT_LE_ADV_OPT_EXT_ADV.
 	 */
 	BT_LE_ADV_OPT_NO_2M = BIT(11),
@@ -543,6 +545,10 @@ enum {
 	 * on the LE Coded PHY. This gives the advertiser increased range with
 	 * the trade-off of lower data rate and higher power consumption.
 	 * Connections will be established on LE Coded PHY.
+	 *
+	 * @note Cannot be set if BT_LE_ADV_OPT_NO_2M is set.
+	 *
+	 * @note Cannot be set if BT_LE_ADV_OPT_AUX_CODED is set.
 	 *
 	 * @note Requires @ref BT_LE_ADV_OPT_EXT_ADV
 	 */
@@ -580,6 +586,23 @@ enum {
 	 * @note Requires @ref BT_LE_ADV_OPT_USE_NAME
 	 */
 	BT_LE_ADV_OPT_FORCE_NAME_IN_AD = BIT(18),
+	
+	/**
+	 * @brief Enable use of LE Coded PHY on the secondary advertising
+	 * channel.
+	 *
+	 * The advertiser will send primary advertising on LE 1M PHY, and
+	 * secondary advertising on LE coded PHY.
+	 * Connections will be established on LE Coded PHY if the scanner
+	 * support is avaible and the LE 1M PHY is out of range.
+	 *
+	 * @note Cannot be set if BT_LE_ADV_OPT_CODED is set.
+	 *
+	 * @note Cannot be set if BT_LE_ADV_OPT_NO_2M is set.
+	 *
+	 * @note Requires @ref BT_LE_ADV_OPT_EXT_ADV.
+	 */
+	BT_LE_ADV_OPT_AUX_CODED = BIT(19),
 };
 
 /** LE Advertising Parameters. */
